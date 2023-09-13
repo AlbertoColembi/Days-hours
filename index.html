@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices</title>
+</head>
+<style>
+    body {
+        background-color: rgb(96, 117, 117);
+    }
+    
+    section {
+        border-radius: 20px;
+        padding: 15px;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        width: 500px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.308);
+    }
+    
+    header {
+        color: rgb(255, 255, 255);
+        font-weight: 900;
+        font-size: 25px;
+        text-align: center;
+        margin: 10px 0px;
+    }
+    
+    #salu {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 17px;
+    }
+    
+    #sms {
+        text-align: center;
+    }
+    
+    footer {
+        color: rgb(255, 255, 255);
+        font-weight: 900;
+        font-size: 12px;
+        text-align: center;
+        margin: 10px 0px;
+    }
+    
+    input {
+        width: 50px;
+    }
+</style>
+
+<body>
+    <header>Periods of the day</header>
+    <section>
+
+        <div id="salu">
+
+        </div>
+        <div id="sms">
+
+        </div>
+    </section>
+    <footer>
+        <p>© Copyright to A.C</p>
+    </footer>
+    <script>
+        var conteiner = document.getElementById("sms");
+        var mensage = document.getElementById("salu");
+        var data = new Date()
+        var hours = data.getHours();
+        var img = document.createElement('img')
+        img.width = 300
+        img.height = 300
+        img.style.borderRadius = '400px'
+        if (hours < 12) {
+            mensage.innerHTML = 'Morning!'
+            img.src = './img/morning.jpg'
+            img.alt = 'Morning'
+            document.body.style.backgroundColor = 'rgb(247, 176, 25)'
+            conteiner.appendChild(img)
+
+        } else
+        if (hours >= 12 && hours < 18) {
+            mensage.innerHTML = 'Afternoon!'
+            img.src = './img/afternoon.jpg'
+            img.alt = 'Afternoon'
+            document.body.style.backgroundColor = 'rgba(227, 143, 15, 0.902)'
+            conteiner.appendChild(img)
+        } else {
+            mensage.innerHTML = 'Night!'
+            img.src = './img/nightly.jpg'
+            img.alt = 'Night'
+            document.body.style.backgroundColor = 'rgb(41, 64, 82)'
+            conteiner.appendChild(img)
+        }
+    </script>
+</body>
+
+</html>
